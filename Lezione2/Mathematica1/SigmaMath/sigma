@@ -1,0 +1,29 @@
+sigma1 = {{0, 1}, {1, 0}};
+sigma2 = {{0, -I}, {I, 0}};
+sigma3 = {{1, 0}, {0, -1}};
+
+C12 = (sigma1.sigma2 ) - ( sigma2.sigma1);
+  Print[" Il commutatore(12) tra [ " , MatrixForm[sigma1] , "  ,  " , 
+  MatrixForm[sigma2] , "  ] = " , MatrixForm[C12] , 
+  "      Dalla teoria infatti = " , 2 I  MatrixForm[sigma3 ], " = ", 
+  MatrixForm[C12] ,  "         (      2 " , I , " (sigma3)    ) "];
+
+Print[  ];
+Print[  ];
+Print[  ];
+
+C13 = (sigma1.sigma3 - sigma3.sigma1);
+   Print[" Il commutatore(13) tra [ " , MatrixForm[sigma1] , 
+  "  ,  " , MatrixForm[sigma3] , "  ] = " , MatrixForm[ C13 ] , 
+  "      Dalla teoria infatti = " , 2 I  MatrixForm[sigma2 ], " = ", 
+  MatrixForm[C13] ,  "         (      2 " , I , " (sigma2)    ) "];
+
+Print[  ];
+Print[  ];
+Print[  ];
+
+C23 = (sigma2.sigma3 - sigma3.sigma2);
+   Print[" Il commutatore(23) tra [ " , MatrixForm[sigma2] , 
+  "  ,  " , MatrixForm[sigma3] , "  ] = " , MatrixForm[C23 ], 
+  "      Dalla teoria infatti = " , 2 I  MatrixForm[sigma1 ], " = ", 
+  MatrixForm[C23] , "       (      2 " , I , " (sigma1)    ) "];

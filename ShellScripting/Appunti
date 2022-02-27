@@ -1,0 +1,84 @@
+voglio trasformare pippo1 pippo2 pippo3 pippo4 pippo5
+in pluto1 pluto2 pluto3 pluto4 pluto 5
+
+provo con mv pippo* pluto*
+  (non va, target pluto* non è una directory)
+  
+  
+  for ((i=1; i<6; ++i)); do echo $i; done    (esempio di comando per shell)
+  
+  for ((i=1; i<6; ++i)); do echo pippo$i; done
+  
+  
+  per la mia finalità
+  
+        for ((i=1; i<6; ++i)); do mv pippo$i pluto$i ; done
+        
+        
+#!/bin/bash        //riga fondamentale: invoca una nuova shell e interpreta questi comandi secondo 
+                   //un dialetto specifico (es in questo caso bash)
+                   
+                   
+                   Scripting linguaggio interpretato e non compilato, comandi binari precompilati
+                   
+                   
+    chmod u+x file.sh    //per rendere file.sh un file eseguibile
+    
+    
+    
+    for ((i=1; i<6; ++i)); do mv pippo$i pluto$i ; done
+    
+    i --> nome della variabile
+    $i --> valore della variabile
+    
+    
+    NAME=Andrea
+    
+    echo NAME    --> NAME
+    echo $NAME   --> Andrea
+    
+    NAME è una variabile della shell
+
+possiamo rendere NAME una variabile di "ambiente", comune cioè a tutte le shell generate a partire da quella in cui stiamo lavorando, con il comando  export NAME
+
+
+le variabili di ambiente sono "personalizzabili"
+    
+    
+    FILES=$(ls -l) 
+    
+    echo $FILES ---> esegue il comando ls -l  
+    
+    ho in una variabile l'output del comando ls -l
+    
+    
+    for i in $(ls); do echo $i; done
+    
+    creo un insieme dei nomi $(ls) presente nella directory e ciclo su di esso, "i" corrisponderà all'elemento i-esimo dell'insieme
+    
+    
+    
+    ((   )) --> all'interno avrò variabili aritmetiche  (ambiente matematico)
+    
+    
+    (   ) --> si apre una sub-shell e si cercano comandi di shell
+    
+    
+    echo $NAME  --> Andrea
+    
+    echo $NAME4  --> Riga vuota
+    
+    echo $(NAME)4  --> Command not found 
+                       4    (echo 4 esiste)
+                       
+    echo ${NAME}4  --> Andrea4        
+    
+    echo $((NAME))4  --> 04   (NAME matematicamente è inizializzata a 0)
+    
+    
+    Le parentesi graffe permettono di rappresentare una lista di alternative tra cui un comando sceglie  ls {*.c ,*.pdf}
+    
+    
+    
+    
+    

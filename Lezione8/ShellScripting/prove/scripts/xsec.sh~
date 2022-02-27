@@ -1,0 +1,4 @@
+#!/bin/bash
+grep ection numbers*/statistics.txt | grep wei | cut -f 2 -d= > xsec.txt
+
+exit 0

@@ -1,0 +1,2 @@
+#!/bin/bash
+while [ !-d `ls` ]; do echo "file"; done

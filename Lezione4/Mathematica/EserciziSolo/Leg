@@ -1,0 +1,20 @@
+eq2 = -D[TH[th] PHI[phi], {phi, 2}] == m^2 TH[th] PHI[phi];
+eq1 = - (1/Sin[th]) (D[Sin[th] D[TH[th] PHI[phi], th], 
+       th]) - (1/(Sin[th]^2)) (D[TH[th] PHI[phi], {phi, 2}]) == 
+   l (l + 1) TH[th] PHI[phi];
+
+sol2 = DSolve[eq2, PHI[phi] , phi];
+sol2 = sol2 /. {C[1] -> 1, C[2] -> I};
+sol22 = D[sol2, {phi, 2}];
+
+eq1 = eq1 /. sol2 /. sol22;
+sol1 = DSolve[eq1, TH[th], th];
+sol1 = sol1 /. {C[1] -> 1, C[2] -> 0};
+
+Psi[th_, phi_, l_, m_] = TH[th] PHI[phi] /. sol1 /. sol2;
+grafico[l_, m_] := ParametricPlot3D[ 
+                    r = Abs[Psi[th, phi, l, m]];
+           {r Sin[th] Sin[phi] , r Sin[th] Cos[phi], 
+    r Cos[th]},                   {th, 0, Pi} , {phi, 0 , Pi}
+                                                                      \
+      ];

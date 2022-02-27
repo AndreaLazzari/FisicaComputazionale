@@ -1,0 +1,13 @@
+f[n_] := Normal[Series[Log[1 + x], {x, 0, n}]];
+esatto = Log[0.1];
+
+Do[
+   approx = f[i] /. (x -> -0.9);
+  diff = Abs[approx/esatto - 1];
+  If[ diff < 0.0001,
+   	Print["Servono ", i, " termini"];
+   	Break[]
+   ]
+  ,
+  	{i, 1, 100}
+  ];

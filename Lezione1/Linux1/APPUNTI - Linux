@@ -1,0 +1,64 @@
+ drwxrwxr-x. 2 ilazza ilazza  4096  4 mar 17.14 Lettera
+-rw-r--r--. 1 ilazza ilazza 20379 29 set  2004 pph.ps
+
+/prima colonna
+  r= readable
+  w= writable 
+  x= executable
+
+/seconda colonna
+-r (per tutti gli utenti) 
+
+/terza colonna
+  utenti di gruppi specifici
+
+ilazza -  user
+
+4096 numero "caratteri"
+
+data
+
+ora
+
+nomefile
+
+
+
+-------------------------------------------------------
+
+
+Per archivi:
+
+
+per comprimere:
+
+tar -cvzf 123456.tgz 123456/      (stando nella directory superiore a quella che voglio archiviare)
+
+
+per estrarre:
+
+tar -xvzf 123456.tgz
+
+---------------------------------------------------------
+
+PER ESAME
+
+scp -r andrealazzari@lcm.mi.infn.it:/home/vicini/esame16apr19 ./
+
+
+scp -r andrealazzari@lcm.mi.infn.it:/home/vicini/esame16apr19.tgz ./
+
+
+tar -xvzf 123456.tar.gz 
+
+
+
+
+tar -cvzf 123456.tar.gz 123456/
+
+
+scp 123456.tar.gz andrealazzari@lcm.mi.infn.it:/home/vicini/esame16apr19/ .
+
+
+
+

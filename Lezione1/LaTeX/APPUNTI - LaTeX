@@ -1,0 +1,57 @@
+LaTeX
+
+\documentclass[12pt]{article}      //sempre back-slash ogni volta che introduco un comando
+                               
+
+\begin{document}
+
+testo
+
+\end{document}
+
+
+
+                classe del documento nella prima riga e grandezza carattere
+                    
+                inizio del documento con begin e fine del documento con end  
+
+                graffa aperta e chiusa su un argomento specifico
+                
+                
+                
+
+compilazione da terminale con latex nomefile.tex
+
+  (punto log errori e compilazione eseguita)
+  
+  
+visualizzare xdvi nomefile.dvi
+per pdf  pdflatex nomefile.tex
+file .aux contiene informazioni di riferimento
+
+
+margini negativi (esco da quelli di default)
+
+in generale 
+{\comandooformatazione testo}\\    (  \\ <--- a capo)
+
+lettere accentate (\'e = é) oppure con l'altro apice è
+  \'\i (prima tolgo il puntino)
+
+%%%%% carattere per commento
+
+\begin{tabular}{lcrl}    //numero di colonne e come è formattato il testo in ciascuna colonna
+      &Qui &Quo &Qua \\
+corsa &9   &11  &123\\
+\hline                            //cornice
+salto &321 &99  &1\\
+
+\end{tabular}
+
+
+
+lettera.tex e articolo.tex   ESEMPI di tantissime situazioni
+
+
+
+

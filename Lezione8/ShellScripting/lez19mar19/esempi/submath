@@ -1,0 +1,2 @@
+#! /bin/bash
+(sleep 1s; time math <$1.m)> $1.out &

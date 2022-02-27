@@ -1,0 +1,164 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6065,        154]
+NotebookOptionsPosition[      5778,        141]
+NotebookOutlinePosition[      6110,        156]
+CellTagsIndexPosition[      6067,        153]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Routine", " ", "di", " ", "integrazione"}], "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"IntegraMonomio", "[", 
+      RowBox[{"expr_", ",", "var_"}], "]"}], ":=", " ", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", "risultato", "}"}], ",", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"If", " ", "[", "  ", 
+         RowBox[{
+          RowBox[{"MatchQ", "[", 
+           RowBox[{"expr", ",", " ", 
+            RowBox[{"w_.", 
+             RowBox[{"var", "^", "n_."}]}]}], " ", "]"}], ",", 
+          "\[IndentingNewLine]", "   ", 
+          RowBox[{
+           RowBox[{"prefattore", "=", " ", 
+            RowBox[{"expr", " ", "/.", " ", 
+             RowBox[{
+              RowBox[{"w_.", " ", 
+               RowBox[{"var", "^", "n_."}]}], " ", "\[Rule]", " ", "w"}]}]}], 
+           ";", "\[IndentingNewLine]", "   ", 
+           RowBox[{"esponente", " ", "=", " ", 
+            RowBox[{"expr", "/.", " ", 
+             RowBox[{
+              RowBox[{"w_.", " ", 
+               RowBox[{"var", "^", "n_."}]}], " ", "\[Rule]", " ", "n"}]}]}], 
+           ";"}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Which", " ", "[", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"MatchQ", "[", 
+            RowBox[{"expr", ",", " ", 
+             RowBox[{"w_.", " ", 
+              RowBox[{"var", "^", "n_."}]}]}], "]"}], " ", "&&", " ", 
+           RowBox[{"FreeQ", "[", " ", 
+            RowBox[{"prefattore", ",", "var"}], "]"}], " ", "&&", " ", 
+           RowBox[{"FreeQ", "[", 
+            RowBox[{"esponente", ",", " ", "var"}], " ", "]"}], " ", "&&", 
+           " ", 
+           RowBox[{"esponente", " ", "=!=", " ", 
+            RowBox[{"-", "1"}]}]}], " ", ",", "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", 
+          RowBox[{"risultato", "=", " ", 
+           RowBox[{
+            RowBox[{"prefattore", "/", 
+             RowBox[{"(", 
+              RowBox[{"esponente", "+", "1"}], ")"}]}], " ", 
+            RowBox[{"var", "^", 
+             RowBox[{"(", 
+              RowBox[{"esponente", "+", "1"}], ")"}]}]}]}], ",", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"MatchQ", "[", 
+            RowBox[{"expr", ",", " ", 
+             RowBox[{"w_.", " ", 
+              RowBox[{"var", "^", "n_."}]}]}], "]"}], " ", "&&", " ", 
+           RowBox[{"FreeQ", "[", " ", 
+            RowBox[{"prefattore", ",", "var"}], "]"}], " ", "&&", " ", 
+           RowBox[{"FreeQ", "[", 
+            RowBox[{"esponente", ",", " ", "var"}], " ", "]"}], " ", "&&", 
+           " ", 
+           RowBox[{"esponente", " ", "===", " ", 
+            RowBox[{"-", "1"}]}]}], " ", ",", "\[IndentingNewLine]", 
+          RowBox[{"risultato", "=", " ", 
+           RowBox[{"prefattore", " ", 
+            RowBox[{"Log", "[", "var", "]"}]}]}], ",", "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", 
+          RowBox[{"FreeQ", "[", " ", 
+           RowBox[{"expr", ",", "var"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"risultato", " ", "=", " ", 
+           RowBox[{"expr", " ", "var"}]}], ",", "\[IndentingNewLine]", "    ",
+           "\[IndentingNewLine]", "True", ",", " ", "\[IndentingNewLine]", 
+          RowBox[{"risultato", " ", "=", " ", 
+           RowBox[{"NonSoIntegrare", "[", 
+            RowBox[{"expr", ",", "var"}], "]"}]}]}], "\[IndentingNewLine]", 
+         "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+        "risultato"}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"myInt", "[", 
+      RowBox[{"expr_", ",", "var_"}], "]"}], ":=", " ", 
+     RowBox[{"Module", "[", " ", 
+      RowBox[{
+       RowBox[{"{", "polinomio", "}"}], ",", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"polinomio", "=", 
+         RowBox[{"Expand", "[", "expr", "]"}]}], ";", "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Which", "[", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Head", "[", "polinomio", "]"}], " ", "===", " ", "Plus"}],
+           ",", "\[IndentingNewLine]", 
+          RowBox[{"risultato", "=", " ", 
+           RowBox[{"Map", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"IntegraMonomio", "[", 
+               RowBox[{"#", ",", "var"}], "]"}], "&"}], " ", ",", 
+             "polinomio"}], "]"}]}], ",", "\[IndentingNewLine]", "True", ",", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"risultato", " ", "=", " ", 
+           RowBox[{"IntegraMonomio", "[", 
+            RowBox[{"polinomio", ",", "var"}], "]"}]}]}], 
+         "\[IndentingNewLine]", "\[IndentingNewLine]", "        ", "]"}], ";",
+         "\[IndentingNewLine]", "risultato"}]}], "\[IndentingNewLine]", 
+      "]"}]}], ";"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellLabel->
+  "In[104]:=",ExpressionUUID->"cbbdcc71-3809-4fbe-ae06-417ebe629824"]
+},
+WindowSize->{672, 847},
+WindowMargins->{{6, Automatic}, {0, Automatic}},
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 5216, 119, 1030, "Input",ExpressionUUID->"cbbdcc71-3809-4fbe-ae06-417ebe629824"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

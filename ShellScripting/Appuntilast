@@ -1,0 +1,42 @@
+
+PER COPIARE
+
+scp -r andrealazzari@lcm.mi.infn.it:/home/vicini/corso1819/lez09apr19 ./ 
+
+********************************************************************************
+
+gnuplot | plot 'data0.dat' u 1:3 w his
+
+
+
+awk -n '{print $4 "  " $3 "  " $2 "  " $1}' data0.dat
+
+//awk scansiona riga per riga il file
+//comando sopra: su ciascuna riga stampa, elemento 4 della riga, poi 3, poi 2 e infine 1
+
+
+awk '{ sum+=$3}' data0.dat   // somma tutte le righe della colonna 3
+
+awk '{sum+=$3} END {print sum/NR}' data0.dat   
+//somma la colonna 3 e ne calcola la media (NR numeroRows propria dell'ambiente)
+
+
+wc -l data0.dat     //numero di righe del file
+
+ls *.dat    //stampa tutti i file con estensione .dat
+
+
+awk -v norm=$integrale '{ print $1 "  " $2 "  " ($3)/norm "  " $4}' < $file > normalized$i.dat;
+ 
+ -v --> awk non trasporta le variabili dalla shell al suo interno, quindi ne inizializzo una nuova a partire da una della shell ( $integrale calcolata prima)
+ 
+ 
+ ************************************************************
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+

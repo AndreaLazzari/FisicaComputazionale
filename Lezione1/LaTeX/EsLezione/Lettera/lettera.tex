@@ -1,0 +1,98 @@
+
+\documentclass[12pt]{letter}
+
+\usepackage{color}
+
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{25cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\leftmargin}{-1cm}
+
+\begin{document}
+
+proviamo a scrivere una lettera\\
+{\rm di solito usiamo il Roman}\\
+{\it oppure l'italico }\\
+{\bf oppure utilizziamo il grassetto}\\
+{\bf\it o una combinazione dei due }\\
+{\tiny e cambiamo la dimensione dei fonts, da piccoli}\\
+{\scriptsize lentamente pi\`u grandi}\\
+{\footnotesize ancora pi\'u grandi}\\
+{\normalsize di nuovo normali}\\
+{\large e poi sempre} {\Large pi\`u grandi} {\LARGE fino a diventare}\\
+{\huge letteralmente} {\Huge ENORMI}\\
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+i comandi in LaTeX sono preceduti da back-slash ovvero dal simbolo 
+$\backslash$\\
+L'accentazione delle lettere avviene facendo precedere
+l'accento alla lettera su cui deve collocarsi.\\
+p.es: \`e oppure \'e oppure \^e oppure \`u oppure \"u 
+oppure \~n\\
+nel caso della lettera i, che ha per default il puntino, bisogna levare 
+il puntino, ottenendo \`\i \\
+alcuni caratteri sono "speciali" poich\'e servono come istruzioni in LaTeX
+per farli comparire \`e necessario utilizzare $\backslash$\\
+tra i pi\`u comuni ci sono il dollaro \$ , la \& e le parentesi 
+graffe \{ e \}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\`e possibile inserire spazi a piacimento\\[2cm]
+sia verticalmente che \hskip5cm orizzontalmente\\
+e inoltre anche con segno negativo\\[1cm]
+\`e possibile 
+\parbox[t]{15cm}
+{individuare dei riquadri entro cui inserire un\\
+paragrafo\\
+per dargli maggiore evidenza
+}\\
+oppure
+\hskip8cm
+\parbox[t]{5cm}
+{per impaginare un indirizzo\\
+Via Celoria 16\\
+20133 Milano}
+
+sempre nella classe dei box ci sono
+\framebox[5cm][t]{ciao ciao}
+quelli con cui si possono evidenziare delle parole
+
+\begin{center}
+per i titoli\\
+{\large\bf a volte fa piacere}\\
+{\Huge\it avere la possibilit\`a di centrare}\\
+{\tiny la frase} 
+\end{center}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+a volte \`e importante scrivere una tabella
+
+\begin{tabular}{lcrl}
+ & Qui & Quo & Qua \\
+corsetta & 9 & 11 & 123\\
+salto & 321 & 99  & 1\\
+\end{tabular}
+
+
+e ovviamente pu\`o essere utile tracciare anche delle linee
+
+\begin{tabular}{|l|c|r|l|}
+\hline
+ & Qui & Quo & Qua \\
+\hline
+corsetta & 9 & 11 & 123\\
+\hline
+salto & 321 & 99  & 1\\
+\hline
+\end{tabular}
+
+
+
+\end{document}

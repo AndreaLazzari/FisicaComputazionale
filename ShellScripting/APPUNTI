@@ -1,0 +1,97 @@
+
+grep espressionecercata dovelocerco
+
+-------------------------------------------------------------------------------------------------------
+
+grep for templ_resbos_CTEQ66_80.348-80.448_2MeV/*    
+
+          //cerco l'espressione for in tutti i file della directory templ...
+
+
+
+grep section numbers_*/statistics.txt      */   --> tutte le directory
+
+
+
+grep section numbers_*/statistics.txt > ../../ridirigo.dat      //ridirigo l'output in un file
+
+
+grep section numbers_*/statistics.txt | less          "|"  --> collega gli output,
+                                                               comandi sequenziali (con less apre l'output)
+
+
+
+grep 'weighted cross section' numbers_*/statistics.txt    //cerca la stringa esatta
+
+
+grep {weighted, cross, section} numbers_*/statistics.txt    ---> cerca tra la lista di alternative
+
+
+
+
+----------------------------------------------------------------------------------------------------
+
+    (-i case insensitive)
+grep -i section afb/numbers_*/statistics.txt | grep weighted | cut -f 2 -d= > ../../xsec.txt
+
+
+cut va a tagliare l'output
+taglia il campo (field, colonna) -f 2 <---(seconda colonna)
+-d delimiter (cosa separa e identifica la seconda colonna)  -d=   ("=" è il delimiter)
+                              (delimiter sempre carattere SINGOLO)
+
+
+
+             (  ESEMPIO OUTPUT  )
+numbers_LHC_calo_el_bis/statistics.txt: weighted cross section     =     19.5287441 +-      0.0022677 (pb)
+
+     
+            ( OUTPUT COMANDO DOPO IL CUT)
+    0.0799654 +-      0.0000072 (pb)
+
+     
+----------------------------------------------------------------------------------------------------
+
+
+
+Problema: simulazione montecarlo molto lunga --> molte simulazioni montecarlo indipendenti
+
+
+
+echo $RANDOM    --> genera numeri random (potrei generarli e usarli come seed da cui iniziano le simualzioni)
+
+./programma < input    (esegue programma con input il contenuto del file input RIGA PER RIGA)
+
+
+
+sed -n "3,5p" listanomi.txt                 //stampa dalla riga 3 alla 5
+
+sed -n "3,3p" listanomi.txt                 //stampa la riga 3
+
+
+
+for ((i=1; i<8;++i)); do sed -n "$i,${i}p" listanomi.txt; done
+
+                               //stampa tutte le righe di listanomi.txt
+                               //contate a mano da riga 1 a 7
+
+
+da un file modello dummy creo es. 500 file di input specifici "sostituendo i segnaposto"
+
+sed -e "s:rnddummy:$rndlist:"\
+    -e "s:pdfdummy:$pdfset:"\
+     < input > $outfile      
+                                        //search and replace 
+                                        //cerca rnddummy e fa replace con output del file rndlist
+                                        //cerca pdfdummy e fa replace con output del file pdfset
+
+
+    --------------------------------------------------------------------------------------------
+
+    
+
+
+
+
+
+

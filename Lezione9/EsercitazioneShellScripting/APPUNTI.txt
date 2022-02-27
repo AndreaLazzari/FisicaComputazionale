@@ -1,0 +1,86 @@
+
+
+
+sed -n '2,4p' listanomi.txt                 //-n suppress automatic printing of pattern space
+
+output dalla riga 2 alla riga 4 del file listanomi.txt
+
+
+sed -n '2,4p' < listanomi.txt   
+
+stesso output (listanomi.txt è il file di input)
+
+
+
+cat listanomi.txt    //output tutte le righe del file
+
+
+cat listanomi.txt | sed -n '2,4p'    
+            //cat visualizza il file e sed (concatenato con pipe) viene eseguito sull'outpu di cat
+            
+            
+sed '2,4d' < listanomi.txt   //toglie le righe da 2 a 4
+
+
+sed -n '/qui/,/qua/p' < listanomi.txt   
+                //stampa dalla prima ricorrenza di "qui" alla prima ricorrenza di "qua"
+                // i pattern sono valutati in tutti il file, il print verrà eseguito anche più volte
+       
+       
+       
+    istogrammi a tre colonne
+    
+    leggere tutti i file [....].100  -  [....].199
+    estrarre tutte le 8 righe di tutti i secondi istogrammi  (index 1)
+    salvare in output "istogramma[numerofile]"  (es l'istogramma del file 156 ->output "istogramma156")
+    
+    utile wc nomefile
+    
+    -l --> linee
+    -w --> parole
+    -c --> caratteri
+    
+    
+    
+  for ((i=1;i<6;++i)); do echo 'pippo    $i'; done     //le ' ' proibiscono alla shell di valutare le variabili
+    
+        output pippo    $i
+               pippo    $i
+               ...
+    
+    
+  for ((i=1;i<6;++i)); do echo "pippo   $i"; done   
+    
+        output pippo    1
+               pippo    2
+               ...
+ 
+ 
+ 
+ awk '{print $1}' voti.txt     //stampa la prima colonna del file voti.txt
+ 
+ awk '{print $2  "   "   $1 }' voti.txt    
+            
+            //stampa prima la seconda colonna  degli spazi e poi la prima colonna del file voti.txt
+            
+            
+ awk '{sum+=$2 } END {print sum }' voti.txt       //somma la colonna due fino alla fine e me stampa       
+    
+ awk '{sum+=$2 } END {print sum/NR}' voti.txt     
+ 
+                //somma tutta la colonna due e poi divide per NR (numero di righe, variabile proprietaria)
+                
+                
+                
+  PROVARE LETTERA DI AUGURI              
+            
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+    

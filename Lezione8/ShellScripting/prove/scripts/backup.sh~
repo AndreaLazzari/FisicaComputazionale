@@ -1,0 +1,29 @@
+#!/bin/sh
+
+
+# Cosa copiare. 
+backup_files="/home /var/spool/mail /etc /root /boot /opt"
+
+# Dove fare la copia di backup.
+dest="/mnt/backup"
+
+# Create archive filename.
+day=$(date +%A)
+hostname=$(hostname -s)
+archive_file="$hostname-$day.tgz"
+
+# Stampa messaggio di avvio.
+echo "Copia di backup di $backup_files in $dest/$archive_file"
+date
+echo
+
+# Esegue il backup con tar.
+tar czf $dest/$archive_file $backup_files
+
+# Stampa messaggio di fine backup.
+echo
+echo "Backup completato"
+date
+
+# Elenco dei file in $dest per controllarne la dimensione
+ls -lh $dest

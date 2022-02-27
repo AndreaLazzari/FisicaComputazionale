@@ -1,0 +1,18 @@
+#!/bin/bash
+#ptmin=(36.4 36.8 37.2 37.6 38.0 38.4 38.8 39.2 39.6 40.0\
+# 40.4 40.8 41.2 41.6 )
+ptmin=(74 75 76 77 78 79 80 81 82 83 84 85 86 87 14002)
+for ((i=14; i<15 ; i++)) ;
+do
+par=${ptmin[i]}
+echo $par
+echo '#!/bin/bash
+cd /home/vicini/DY/CC/NNLO/
+./fewzw' $par 'LHCres'$par'.dat vegas_last_iter_'$par\
+' > LHCout'$par'.out' > a.sh
+cat a.sh
+qsub -l nodes=1:ppn=1 a.sh ;
+sleep 10s
+#$((i*100)) > file.tmp && 
+#./fewzw' $par 'numbers/TEV/MRST2004/pt'$par'/  > TEVpt'$par'.out'> a.sh
+done

@@ -1,0 +1,8 @@
+ hit or miss cross section  =    143.7057884 +-      0.0660224 (pb)
+ weighted cross section     =    143.7074815 +-      0.0060587 (pb)
+ Partial cross sections:
+  cross section   0. +-  0.
+ hit or miss cross section  =    143.7057884 +-      0.0660224 (pb)
+ weighted cross section     =    143.7074815 +-      0.0060587 (pb)
+ Partial cross sections:
+  cross section   0. +-  0.

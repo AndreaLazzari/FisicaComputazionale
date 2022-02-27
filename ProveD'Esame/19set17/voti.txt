@@ -1,0 +1,7 @@
+M Brontolo 24
+T Mammolo 26
+M Pisolo 30
+M Eolo 29
+M Dotto 27
+T Gongolo 25
+T Cucciolo 30
